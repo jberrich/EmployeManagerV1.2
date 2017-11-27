@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+<tableList databaseId="1" databaseName="MYSQL" databaseProductName="MySQL" generation="2017-11-20 23:12:42">
+<table catalog="employesdb" databaseType="TABLE" javaBean="Dept" name="dept" schema="">
+<column dbComment="" dbDefaultValue="" dbName="DEPTNO" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="deptno" javaType="int" jdbcTypeCode="4" label="Deptno" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="DNAME" dbNotNull="false" dbPosition="2" dbSize="14" dbTypeName="VARCHAR" inputType="text" javaName="dname" javaType="java.lang.String" jdbcTypeCode="12" label="Dname" maxLength="14" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="LOC" dbNotNull="false" dbPosition="3" dbSize="13" dbTypeName="VARCHAR" inputType="text" javaName="loc" javaType="java.lang.String" jdbcTypeCode="12" label="Loc" maxLength="13" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="emp_ibfk_1" id="LINK_FK_emp_ibfk_1_I" inverseSideOf="LINK_FK_emp_ibfk_1_O" javaName="listOfEmp" javaType="java.util.List" joinTableName="" mappedBy="dept" optional="UNDEFINED" owningSide="false" sourceTableName="dept" targetEntity="Emp" targetTableName="emp" used="true"/>
+</table>
+<table catalog="employesdb" databaseType="TABLE" javaBean="Emp" name="emp" schema="">
+<column dbAutoIncremented="true" dbComment="" dbDefaultValue="" dbName="EMPNO" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="empno" javaType="int" jdbcTypeCode="4" label="Empno" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="ENAME" dbNotNull="false" dbPosition="2" dbSize="64" dbTypeName="VARCHAR" inputType="text" javaName="ename" javaType="java.lang.String" jdbcTypeCode="12" label="Ename" maxLength="64" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="JOB" dbNotNull="false" dbPosition="3" dbSize="9" dbTypeName="VARCHAR" inputType="text" javaName="job" javaType="java.lang.String" jdbcTypeCode="12" label="Job" maxLength="9" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="AGE" dbNotNull="false" dbPosition="4" dbSize="10" dbTypeName="INT" inputType="number" javaName="age" javaType="int" jdbcTypeCode="4" label="Age" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="SAL" dbNotNull="false" dbPosition="5" dbSize="7" dbTypeName="DECIMAL" inputType="number" javaName="sal" javaType="int" jdbcTypeCode="3" label="Sal" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbForeignKey="true" dbName="DEPTNO" dbNotNull="false" dbPosition="6" dbSize="10" dbTypeName="INT" inputType="number" javaName="deptno" javaType="int" jdbcTypeCode="4" label="Deptno" notNull="false" selected="true"/>
+<fk name="emp_ibfk_1">
+<fkcol colname="DEPTNO" colref="DEPTNO" deferrable="7" deleterule="3" sequence="1" tablename="emp" tableref="dept" updaterule="3"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="emp_ibfk_1" id="LINK_FK_emp_ibfk_1_O" inverseSideOf="" javaName="dept" javaType="Dept" joinTableName="" mappedBy="" optional="UNDEFINED" owningSide="true" sourceTableName="emp" targetEntity="Dept" targetTableName="dept" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="DEPTNO" nullable="true" referencedColumnName="DEPTNO" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+</tableList>
+</root>
